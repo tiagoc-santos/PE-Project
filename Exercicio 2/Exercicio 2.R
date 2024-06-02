@@ -10,4 +10,4 @@ data <- subset(data, year == target_year & age == target_age)
 data |>
   ggplot() +
   geom_boxplot(aes(sex, suicides.100k.pop)) +
-  labs(title = "Suicides per 100K population (Men vs Women)", y = "Suicides per 100K population")
+  labs(title = "Suicides per 100K population in 2002 (Male vs Female in ages 55-74)", y = "Suicides per 100K population")
