@@ -20,12 +20,19 @@ f <- function(x){
 
 width <- (b - a) / k
 class_boundaries <- seq(a, b, by = width)
+
 classes <- cut(dados, breaks = class_boundaries)
 freq_observadas <- table(classes)
 
-probs <- vector(mode = "numeric", length = 6)
+Ei <- vector(mode = "numeric", length = 6)
 for(i in 2:7){
-  probs[i - 1] <- f(class_boundaries[i]) - f(class_boundaries[i - 1])
+  Ei[i - 1] <- n*(f(class_boundaries[i]) - f(class_boundaries[i - 1])) 
 }
-solution <- chisq.test(freq_observadas, p = probs)$p.value
-round(solution, 4)
+
+t <- 0
+for(i in 1:6){
+  t <- t + (((freq_observadas[i]-Ei[i])^2)/Ei[i])
+}
+
+valor_p <- 1 - pchisq(t, k -1)
+round(valor_p, 4)

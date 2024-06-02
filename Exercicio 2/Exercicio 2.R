@@ -11,4 +11,3 @@ data |>
   ggplot() +
   geom_boxplot(aes(sex, suicides.100k.pop)) +
   labs(title = "Suicides per 100K population (Men vs Women)", y = "Suicides per 100K population")
-     
