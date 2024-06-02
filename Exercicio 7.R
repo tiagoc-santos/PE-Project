@@ -19,8 +19,11 @@ nll <- function(theta){
 
 theta_mle <- mle(nll, start = list(theta = 3.4))
 
-quantil_estimado <- 4.5 * (p / theta_mle@coef)^(1 / theta_mle@coef)
-quantil_verdadeiro <- 4.5 * (p / 3.4)^(1 / 3.4)
+theta <- (theta_mle@coef)
+quantil_estimado <- (((4.5)^2*theta)/4.5)^(1/theta)
+
+theta <- 3.4
+quantil_verdadeiro <- (((4.5)^2*theta)/4.5)^(1/theta)
 
 desvio_absoluto <- abs(quantil_estimado - quantil_verdadeiro)
 round(desvio_absoluto, 4)
