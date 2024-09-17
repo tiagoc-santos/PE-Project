@@ -24,6 +24,6 @@ mean_proportion <- mean(proportions)
 
 
 direct_prob <- pt(1.5, df = n)
-difference <- abs(mean_proportion - direct_prob) * 100
+difference <- abs(mean_proportion - direct_prob) 
 result <- round(difference * 100, 5) 
 result
