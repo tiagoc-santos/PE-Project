@@ -144,12 +144,10 @@ $$
 2. Obtenha o intervalo de confiança a um nível de confiança $γ=0.95$ para $σ^2$ com base na amostra selecionada em 1. e nos quantis de probabilidade $$a = F_{\chi^2_{(n-1)}}^{-1} \left( \frac{1-\gamma}{2} \right)\quad\text{e}\quad b = F_{\chi^2_{(n-1)}}^{-1} \left( \frac{1+\gamma}{2} \right)$$.
 
 3. De modo a minimizar a amplitude esperada do intervalo aleatório de confiança para $σ^2$ ao nível de confiança anterior, considere o par de quantis de probabilidade $(c,d)$ satisfazendo as duas equações seguintes:
-$$
-\begin{cases}
+$$\begin{cases}
 F_{\chi^2_{(n-1)}}(d) - F_{\chi^2_{(n-1)}}(c) = \gamma \\
 f_{\chi^2_{(n+3)}}(d) - f_{\chi^2_{(n+3)}}(c) = 0
-\end{cases}
-$$
+\end{cases}$$
 
     Para obter $(c,d)$ instale o pacote pracma e use a função *fsolve* considerando $(a,b)$ como o valor inicial da pesquisa numérica e sem utilizar qualquer outro argumento opcional dessa função.
 
@@ -172,15 +170,13 @@ Fixando a semente em $2822$, gere $m=5000$ pares de amostras de dimensão $n=100
 ## 10
 
 Seja $X$ o tempo, em horas, que uma dada tarefa demora a ser executada numa empresa. O director desta empresa considera que $X$ tem distribuição triangular simétrica com valor mínimo $a=4.5$ e valor máximo $b=13$, cuja função de distribuição é
-$$
-F_X(x) = 
+$$F_X(x) = 
 \begin{cases}
 0, & x < a \\
 2 \left( \frac{x - a}{b - a} \right)^2, & a \leq x < \frac{a + b}{2} \\
 1 - 2 \left( \frac{b - x}{b - a} \right)^2, & \frac{a + b}{2} \leq y < b \\
 1, & x \geq b
-\end{cases}
-$$
+\end{cases}$$
 
 Para testar a sua hipótese ($H_0$) o director colecionou $n=140$ tempos de execução da tarefa, retirados ao acaso do historial da empresa, o que conduziu aos seguintes resultados:
 
