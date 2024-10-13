@@ -143,8 +143,18 @@ $$
 
 2. Obtenha o intervalo de confiança a um nível de confiança $γ=0.95$ para $σ^2$ com base na amostra selecionada em 1. e nos quantis de probabilidade $$a = F_{\chi^2_{(n-1)}}^{-1} \left( \frac{1-\gamma}{2} \right)\quad\text{e}\quad b = F_{\chi^2_{(n-1)}}^{-1} \left( \frac{1+\gamma}{2} \right)$$.
 
-3. De modo a minimizar a amplitude esperada do intervalo aleatório de confiança para $σ^2$ ao nível de confiança anterior, considere o par de quantis de probabilidade $(c,d)$ satisfazendo as duas equações seguintes: $$\begin{cases}F_{\chi^2_{(n-1)}}(d) - F_{\chi^2_{(n-1)}}(c) = \gamma \\f_{\chi^2_{(n+3)}}(d) - f_{\chi^2_{(n+3)}}(c) = 0\end{cases}$$ Para obter $(c,d)$ instale o pacote pracma e use a função *fsolve* considerando $(a,b)$ como o valor inicial da pesquisa numérica e sem utilizar qualquer outro argumento opcional dessa função.
-Utilize estes quantis para determinar um novo intervalo de confiança para $σ^2$ com base nos mesmos dados usados em 2.
+3. De modo a minimizar a amplitude esperada do intervalo aleatório de confiança para $σ^2$ ao nível de confiança anterior, considere o par de quantis de probabilidade $(c,d)$ satisfazendo as duas equações seguintes:
+
+$$
+\begin{cases}
+F_{\chi^2_{(n-1)}}(d) - F_{\chi^2_{(n-1)}}(c) = \gamma \\
+f_{\chi^2_{(n+3)}}(d) - f_{\chi^2_{(n+3)}}(c) = 0
+\end{cases}
+$$ 
+
+  * Para obter $(c,d)$ instale o pacote pracma e use a função *fsolve* considerando $(a,b)$ como o valor inicial da pesquisa numérica e sem utilizar qualquer outro argumento opcional dessa função.
+
+  * Utilize estes quantis para determinar um novo intervalo de confiança para $σ^2$ com base nos mesmos dados usados em 2.
 
 4. Indique o valor da diferença, arredondada a três casas decimais, entre as amplitudes dos intervalos de confiança calculados em 2. e 3.
 
